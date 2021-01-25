@@ -16,6 +16,8 @@ app.use(express.static("public"));
 //write files for the api and html routes folder
 // require('./routes/apiRoute')(app);
 // require('./routes/htmlRoute')(app);
+
+//added this instead and put both files together 
 require('./routes/routes')(app);
 
 
