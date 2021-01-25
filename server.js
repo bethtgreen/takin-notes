@@ -11,13 +11,13 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname));
+app.use(express.static("public"));
 
 //write files for the api and html routes folder
-require('./routes/apiRoute')(app);
-require('./routes/htmlRoute')(app);
+// require('./routes/apiRoute')(app);
+// require('./routes/htmlRoute')(app);
+require('./routes/routes')(app);
 
-//where we serve html
-app.get("/", function(req, res) {res.json(path.join(__dirname, "public/index.html"));});
 
 // listener
 app.listen(PORT, function() {
