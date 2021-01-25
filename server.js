@@ -12,8 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname));
 
-//write file for the api and html routes folder
-require('./routes/routes')(app);
+//write files for the api and html routes folder
+require('./routes/apiRoute')(app);
+require('./routes/htmlRoute')(app);
 
 //where we serve html
 app.get("/", function(req, res) {res.json(path.join(__dirname, "public/index.html"));});
