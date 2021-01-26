@@ -14,10 +14,7 @@ app.use(express.static(__dirname));
 app.use(express.static("public"));
 
 //write files for the api and html routes folder
-// require('./routes/apiRoute')(app);
-// require('./routes/htmlRoute')(app);
-
-//added this instead and put both files together 
+//added this in the place of making two htmls and put both files together 
 require('./routes/routes')(app);
 
 
