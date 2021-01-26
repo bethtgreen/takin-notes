@@ -1,6 +1,6 @@
 //this is a route file that combines both the index.html and the notes.html
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = app => {
 
@@ -40,7 +40,7 @@ module.exports = app => {
             console.log("Note has been deleted. Id:  "+ req.params.id);
         });
 
-
+//this is where the html files are 
        //notes and index function to sendFile
         app.get('/notes', function(req,res) {
             res.sendFile(path.join(__dirname, "../public/notes.html"));
@@ -49,9 +49,9 @@ module.exports = app => {
             res.sendFile(path.join(__dirname, "../public/index.html"));
         });
 
-        //updateDb to whatever has been deleted or added
-        function updateDb() {
-            fs.writeFile("db/db.json",JSON.stringify(notes,'\t'),err => {
+        //update the database to whatever has been deleted or added with function newdb
+        function newDb() {
+            fs.writeFile("db/db.json",JSON.parse(notes,'\t'),err => {
                 if (err) throw err;
                 return true;
             });

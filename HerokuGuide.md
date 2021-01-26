@@ -100,6 +100,6 @@ If you haven't run into any errors at this point, you should be able to proceed 
 
 * If your Heroku app fails to deploy, run the command `heroku logs` in your command line
 
-  * This should print all the logs produced by both Heroku and your application before the deployment failed. 
+  * This should print all the logs produced by both Heroku and your application before the deployment failed. abcabcaa
   
   * Look for the first indication of an error in the logs. If the error message isn't clear, search on Google or ask the Instructional Staff for help.
