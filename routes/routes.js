@@ -1,3 +1,4 @@
+//this is a route file that combines both the index.html and the notes.html
 var fs = require('fs');
 var path = require('path');
 
