@@ -23,7 +23,7 @@ module.exports = app => {
             // this will take the note you typed, and send it to the db.json
             let takeNote = req.body;
             notes.push(takeNote);
-            updateDb();
+            newDb();
             return console.log("Yay! You have a new note! It says:  "+ takeNote.title);
         });
 
@@ -36,7 +36,7 @@ module.exports = app => {
      //this will help delete the notes you made already
         app.delete("/api/notes/:id", function(req, res) {
             notes.splice(req.params.id, 1);
-            updateDb();
+            newDb();
             console.log("Note has been deleted. Id:  "+ req.params.id);
         });
 
@@ -51,8 +51,8 @@ module.exports = app => {
         });
 
         //update the database to whatever has been deleted or added with function newdb
-        function updateDb() {
-            fs.writeFile("db/db.json",JSON.parse(notes,'\t'),err => {
+        function newDb() {
+            fs.writeFile("db/db.json", JSON.stringify(notes,'\t'),err => {
                 if (err) throw err;
                 return true;
             });

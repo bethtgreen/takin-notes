@@ -22,19 +22,3 @@ require('./routes/routes')(app);
 app.listen(PORT, function() {
     console.log("Listening on PORT: " + PORT);
 });  
-
-// // delete function
-// app.delete(db/db.json, (req, res) => {
-//     const noteId = req.params.id;
-// });
-
-//     fs.readFile(db/db.json, (err, data) => {
-//         if (err) throw err;
-//         var notes = JSON.parse(data);
-//         var filterNotes = notes.filter(note => note.id != noteId);
-//     });
-
-//         fs.writeFile(db/db.json, JSON.stringify(filterNotes, null, 2), err =>{
-//             if (err) throw err;
-//             res.send();
-//         });
