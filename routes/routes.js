@@ -45,12 +45,13 @@ module.exports = app => {
         app.get('/notes', function(req,res) {
             res.sendFile(path.join(__dirname, "../public/notes.html"));
         });
+        //to the index.html
         app.get('*', function(req,res) {
             res.sendFile(path.join(__dirname, "../public/index.html"));
         });
 
         //update the database to whatever has been deleted or added with function newdb
-        function newDb() {
+        function updateDb() {
             fs.writeFile("db/db.json",JSON.parse(notes,'\t'),err => {
                 if (err) throw err;
                 return true;
@@ -60,3 +61,4 @@ module.exports = app => {
     });
 
 }
+// can i add a function that deletes the added notes? 
